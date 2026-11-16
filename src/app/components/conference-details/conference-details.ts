@@ -10,7 +10,5 @@ import { Conference } from '../../models/conference';
   styleUrl: './conference-details.css',
 })
 export class ConferenceDetails {
-
   @Input() conference: Conference | null = null;
-
 }
