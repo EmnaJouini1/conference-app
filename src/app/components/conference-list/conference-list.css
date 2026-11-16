@@ -8,6 +8,14 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.clickable-title {
+  cursor: pointer;
+}
+
+.clickable-title:hover {
+  color: orange;
+}
+
 h2 {
   color: #263b60;
 }

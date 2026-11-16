@@ -9,6 +9,12 @@
 
 <app-notifications></app-notifications>
 
-<app-conference-list></app-conference-list>
+<app-conference-list
+  (conferenceSelected)="onConferenceSelected($event)">
+</app-conference-list>
+
+<app-conference-details
+  [conference]="selectedConference">
+</app-conference-details>
 
 <app-footer></app-footer>

@@ -1,17 +1,8 @@
 
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DatePipe, UpperCasePipe } from '@angular/common';
-
-interface Conference {
-  id: number;
-  title: string;
-  description: string;
-  date: Date;
-  place: string;
-  maxParticipants: number;
-  nbParticipants: number;
-}
+import { Conference } from '../../models/conference';
 
 @Component({
   selector: 'app-conference-list',
@@ -23,6 +14,8 @@ interface Conference {
 export class ConferenceList {
 
   searchTitle: string = '';
+
+  @Output() conferenceSelected = new EventEmitter<Conference>();
 
   conferences: Conference[] = [
     {
@@ -62,5 +55,9 @@ export class ConferenceList {
     if (this.getPlacesRestantes(c) > 0) {
       c.nbParticipants++;
     }
+  }
+
+  selectionnerConference(c: Conference): void {
+    this.conferenceSelected.emit(c);
   }
 }
