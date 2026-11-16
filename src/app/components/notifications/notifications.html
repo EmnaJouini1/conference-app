@@ -1,0 +1,17 @@
+
+<div class="notifications">
+  <h2>Zone de notifications</h2>
+
+  <p>Vous avez 2 nouvelles notifications.</p>
+
+  <button (click)="afficherNotifications()">
+    {{ afficher ? 'Masquer les notifications' : 'Afficher les notifications' }}
+  </button>
+
+  @if (afficher) {
+    <ul>
+      <li>Nouvelle conférence disponible !</li>
+      <li>Ahmed a rejoint une conférence.</li>
+    </ul>
+  }
+</div>

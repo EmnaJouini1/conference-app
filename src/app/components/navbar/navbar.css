@@ -1,0 +1,19 @@
+
+nav {
+  background-color: #eeeeee;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+a {
+  color: #263b60;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: orange;
+}

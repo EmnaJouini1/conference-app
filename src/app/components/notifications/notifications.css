@@ -1,0 +1,25 @@
+
+.notifications {
+  background-color: #fff8e1;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  border: 1px solid #f0d98c;
+}
+
+h2 {
+  color: #263b60;
+}
+
+button {
+  background-color: #263b60;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #405d8c;
+}

@@ -1,0 +1,11 @@
+
+header {
+  background-color: #263b60;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+h1, h2, p {
+  margin: 8px;
+}

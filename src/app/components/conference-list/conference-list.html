@@ -1,0 +1,50 @@
+
+<h2>Liste des conférences à venir</h2>
+
+<p>Cliquez sur une conférence pour afficher ses détails.</p>
+
+<input
+  type="text"
+  [(ngModel)]="searchTitle"
+  placeholder="Taper le titre de la conférence"
+>
+
+@if (conferences.length === 0) {
+  <p>Aucune conférence enregistrée.</p>
+} @else {
+
+  @for (c of conferences; track c.id) {
+
+    @if (c.title.toLowerCase().includes(searchTitle.toLowerCase())) {
+
+      <div class="conference-card">
+
+        <h3>{{ c.title | uppercase }}</h3>
+
+        <p>Date : {{ c.date | date:'dd/MM/yyyy' }}</p>
+
+        <p>Lieu : {{ c.place }}</p>
+
+        <p>Participants : {{ c.nbParticipants }} / {{ c.maxParticipants }}</p>
+
+        <p>Places restantes : {{ getPlacesRestantes(c) }}</p>
+
+        <button
+          [class.green]="getPlacesRestantes(c) >= 10"
+          [class.orange]="getPlacesRestantes(c) > 0 && getPlacesRestantes(c) < 10"
+          [class.red]="getPlacesRestantes(c) === 0"
+          [disabled]="getPlacesRestantes(c) === 0"
+          (click)="inscrire(c)"
+        >
+          @if (getPlacesRestantes(c) === 0) {
+            Complet
+          } @else {
+            S'inscrire
+          }
+        </button>
+
+      </div>
+
+    }
+  }
+}
